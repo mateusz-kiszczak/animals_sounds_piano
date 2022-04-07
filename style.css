@@ -1,0 +1,361 @@
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* TYPOGRAPHY */
+
+html {
+    font-size: 16px;
+}
+
+h1 {
+    color: hsl(315, 50%, 10%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    display: none;
+}
+
+
+/* PAGE */
+body {
+    background-color: hsl(145, 50%, 90%);
+}
+
+main {
+    padding: 24px 16px;
+    width: 100%;
+}
+
+#main-section {
+    margin: 16px auto;
+}
+
+@media only screen and (orientation: portrait) {
+    #main-section {
+        margin: 16px auto;
+        max-width: 600px;
+        min-width: 300px;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #main-section {
+        width: 100%;
+    }
+}
+
+
+/* ONOMATOPOEIA */
+
+#onomatopoeia-section {
+    align-items: center;
+    background-color: hsl(145, 50%, 60%);
+    border-radius: 10px;
+    height: 60px;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+#sound-imitation {
+    animation: onomatopoeiaApper 400ms ease-out;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+@keyframes onomatopoeiaApper {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    #onomatopoeia-section {
+        display: flex;
+        width: 100%;
+    }
+    @media only screen 
+    and (min-width: 376px) {
+        #onomatopoeia-section {
+            height: 75px;
+        }
+
+        #sound-imitation {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+
+    @media only screen 
+    and (min-width: 635px) {
+        #onomatopoeia-section {
+            height: 75px;
+            margin-bottom: 32px;
+            margin-top: 32px;
+        }
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #onomatopoeia-section {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+        width: 500px;
+    }
+
+    #sound-imitation {
+        font-size: 2em;
+        font-weight: bold;
+    }
+}
+
+/* KEYBOARD */
+
+#keyboard {
+    background-color: hsl(315, 60%, 60%);
+    box-shadow: inset -5px -5px 3px hsl(315, 50%, 20%), inset 5px 5px 5px hsl(315, 50%, 85%);
+    border: 1px solid hsl(315, 50%, 20%);
+    display: flex;
+}
+
+#keys-container {
+    background-color: hsl(315, 50%, 10%);
+    padding: 1px;
+}
+
+.keyboard-key {
+    background-color: hsl(315, 50%, 85%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px hsl(315, 50%, 100%), inset -1px -1px 5px hsl(315, 50%, 10%);
+    cursor: pointer;
+    user-select: none;
+    transition: all 100ms linear;
+}
+
+.keyboard-key:hover,
+.keyboard-key:active,
+.keyboard-key:focus {
+    background-color: hsl(68, 50%, 85%);
+}
+
+.key-emoji {
+    line-height: 1;
+}
+
+#speakers-container {
+    align-items: center;
+    display: none;
+    justify-content: space-between;
+}
+
+.speaker {
+    align-items: center;
+    background-color: hsl(315, 60%, 60%);;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 3px hsl(315, 50%, 20%), inset 5px 5px 5px hsl(315, 50%, 85%);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.speaker > div {
+    background-color: hsl(315, 50%, 20%);
+    border-radius: 20px;
+    box-shadow: inset -2px 0px 2px hsl(315, 50%, 85%);
+    height: 70%;
+    width: 10%;
+}
+
+.speaker > div:first-of-type,
+.speaker > div:last-of-type {
+    height: 40%;
+}
+
+@media only screen and (orientation: portrait) {
+    #keyboard {
+        border: 1px solid hsl(315, 50%, 20%);
+        border-radius: 18px 30px 30px 10px;
+        box-shadow: inset -5px -5px 3px hsl(315, 50%, 20%), inset 5px 5px 5px hsl(315, 50%, 85%);
+        display: flex;
+        padding: 28px 0;
+        width: 100%;
+    }
+    
+    #keys-container {
+        background-color: hsl(315, 50%, 10%);
+        padding: 1px;
+        width: 80%;
+    }
+    
+    .keyboard-key {
+        background-color: hsl(315, 50%, 85%);
+        border: none;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 5px hsl(315, 50%, 100%), inset -1px -1px 5px hsl(315, 50%, 10%);
+        display: block;
+        margin: 2px 0;
+        text-align: left;
+        width: 100%;
+        transform-origin: right;
+    }
+
+    .keyboard-key:active {
+        transform: perspective(40em) rotateY(-1deg);  
+    }
+    
+    .key-emoji {
+        display: inline-block;
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 8px 16px;
+    }
+    
+
+    @media only screen 
+    and (min-width: 376px) {
+        .key-emoji {
+            font-size: 2rem;
+            padding: 12px 16px;
+        }
+    }
+
+    @media only screen 
+    and (min-width: 460px) {
+        #keys-container  {
+            width: 350px;
+        }
+    }
+
+    @media only screen 
+    and (min-width: 635px) {
+        .key-emoji {
+            font-size: 2.5rem;
+            padding: 16px;
+        }
+
+        #speakers-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 20px;
+            width: 200px;
+        }
+
+        .speaker {
+            height: 200px;
+            width: 200px;
+            
+        }
+    }
+}
+
+@media only screen 
+and (orientation: landscape) {
+    #piano-section {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #keyboard {
+        border-radius: 30px 30px 10px 18px;
+        display: inline-flex;
+        flex-direction: column-reverse;
+        padding: 0 28px;
+    }
+
+    #keys-container {
+        display: flex;
+        height: 250px;
+    }
+    
+    .keyboard-key {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 0px;
+        height: 100%;
+        justify-content: center;
+        margin: 0 2px;
+        transform-origin: top;
+    }
+
+    .keyboard-key:active {
+        transform: perspective(40em) rotateX(-2deg);  
+    }
+    
+    .key-emoji {
+        font-size: 3rem;
+        padding: 16px 8px;
+    }
+
+    #speakers-container {
+        display: flex;
+        height: 200px;
+        margin: 20px 0;
+    }
+
+    .speaker {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/* SHORTHANDS */
+
+#shorthands-container {
+    display: none;
+    user-select: none;
+}
+
+@media only screen 
+and (orientation: landscape) {
+    #shorthands-container {
+        align-items: center;
+        background-color: hsl(145, 50%, 60%);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 32px auto;
+        padding: 16px;
+        width: 700px;
+    }
+
+    #shorthands-container > div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #shorthands-container > div > span {
+        font-size: 2rem;
+    }
+
+    kbd {
+        background-color: hsl(315, 5%, 90%);
+        border: 1px solid hsl(315, 5%, 80%);
+        border-radius: 3px;
+        box-shadow: 0 1px 1px hsl(315, 50%, 2%), 0 2px 0 0 hsl(315, 50%, 97%) inset;
+        color: hsl(315, 50%, 2%);
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1;
+        padding: 4px 8px;
+        margin-top: 4px;
+        text-align: center;
+    }
+}
