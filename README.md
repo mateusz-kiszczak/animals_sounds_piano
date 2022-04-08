@@ -29,6 +29,7 @@ Reusable code offers you to add keys end sound of your choice. Follow the patter
 
 ### JavaScript (ES6 and above)
 
+* DOM manipulation
 * Event Listeners
 * Functions
 * Objects
